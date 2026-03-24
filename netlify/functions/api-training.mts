@@ -10,7 +10,7 @@ export default async (req: Request, context: Context) => {
     let manualLogs = await store.get("training_logs", { type: 'json' }) || [];
     
     const now = Date.now();
-    const lastSyncStr = await store.get("strava_last_sync") || "0";
+    const lastSyncStr = await store.get("strava_last_sync", { type: "text" }) || "0";
     const lastSync = parseInt(lastSyncStr);
 
     let stravaLogs = await store.get("strava_cache", { type: 'json' }) || [];
