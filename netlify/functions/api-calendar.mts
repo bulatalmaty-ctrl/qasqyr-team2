@@ -1,6 +1,6 @@
 import { getStore } from "@netlify/blobs";
 
-const STORE_NAME = "qasqyr_store";
+const STORE_NAME = "qasqyr_data";
 
 export default async (req: Request) => {
   const store = getStore(STORE_NAME);
