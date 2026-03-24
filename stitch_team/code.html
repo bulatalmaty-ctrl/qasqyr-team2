@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="kk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Lexend:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ffb4ab",
+              "on-tertiary-container": "#b0aeae",
+              "surface-container-high": "#2a2a2a",
+              "on-surface": "#e5e2e1",
+              "surface": "#131313",
+              "on-background": "#e5e2e1",
+              "on-primary-fixed": "#410000",
+              "primary-container": "#8b0000",
+              "surface-container-highest": "#353534",
+              "on-tertiary-fixed-variant": "#474747",
+              "primary-fixed-dim": "#ffb4a8",
+              "on-primary": "#690000",
+              "on-tertiary-fixed": "#1b1c1c",
+              "on-secondary-fixed-variant": "#653e00",
+              "surface-dim": "#131313",
+              "on-error": "#690005",
+              "on-tertiary": "#303030",
+              "surface-bright": "#3a3939",
+              "inverse-surface": "#e5e2e1",
+              "surface-container": "#201f1f",
+              "inverse-primary": "#b52619",
+              "secondary": "#ffb95f",
+              "inverse-on-surface": "#313030",
+              "on-primary-container": "#ff907f",
+              "outline-variant": "#5a403c",
+              "primary": "#ffb4a8",
+              "primary-fixed": "#ffdad4",
+              "outline": "#aa8984",
+              "tertiary-fixed-dim": "#c8c6c6",
+              "secondary-fixed-dim": "#ffb95f",
+              "on-error-container": "#ffdad6",
+              "secondary-fixed": "#ffddb8",
+              "surface-tint": "#ffb4a8",
+              "surface-variant": "#353534",
+              "on-surface-variant": "#e3beb8",
+              "surface-container-low": "#1c1b1b",
+              "secondary-container": "#ee9800",
+              "on-primary-fixed-variant": "#920703",
+              "background": "#131313",
+              "on-secondary-fixed": "#2a1700",
+              "tertiary": "#c8c6c6",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary-container": "#5b3800",
+              "on-secondary": "#472a00",
+              "error-container": "#93000a",
+              "tertiary-container": "#424242",
+              "tertiary-fixed": "#e4e2e1"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Lexend"],
+              "label": ["Lexend"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .tracking-tiled { letter-spacing: -0.05em; }
+      html { scroll-behavior: smooth; }
+      .text-huge {
+        font-size: clamp(4rem, 15vw, 12rem);
+        line-height: 0.8;
+      }
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: #131313; }
+      ::-webkit-scrollbar-thumb { background: #8b0000; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-white">
+<!-- Fixed Top Navigation Bar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 py-4 bg-surface/70 backdrop-blur-xl border-b border-white/10 z-50">
+<div class="text-2xl font-black italic tracking-tiled text-white font-headline">
+        ҚАСҚЫР TEAM
+    </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-sm text-[#E3BEB8] hover:text-white transition-colors duration-300" href="#hero">Главная</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-sm text-[#E3BEB8] hover:text-white transition-colors duration-300" href="#team">Команда</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-sm text-[#E3BEB8] hover:text-white transition-colors duration-300" href="#training">Тренировки</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-sm text-[#E3BEB8] hover:text-white transition-colors duration-300" href="#calendar">Календарь</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-sm text-[#E3BEB8] hover:text-white transition-colors duration-300" href="#gallery">Галерея</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-sm text-[#E3BEB8] hover:text-white transition-colors duration-300" href="#ironman">Ironman 2026</a>
+</div>
+<button class="bg-primary-container text-white px-6 py-2 font-headline uppercase font-bold text-xs tracking-widest scale-95 active:scale-90 transition-transform">
+        Вступить в стаю
+    </button>
+</nav>
+<!-- 1. Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-start overflow-hidden pt-16" id="hero">
+<div class="absolute inset-0 z-0">
+<img alt="Triathlon team in competition" class="w-full h-full object-cover grayscale opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKvzxmlWQhEmYwxD32EIVbDvAoScJMv_kCgSjKxPZ0LZ-UwPgypP5_pFa5EOLFXJt8mII0cmDtfVE-ea4kwIXRl4enTYB-oJKUP9sUh5ITByCZ6-GAZ5jccmvNqfGJeMHA6dKa8y7vW1pOIHI5YS-IAGdBEtZlYRssXR6eLz6ROkrIpSQYBFjOhunSxMVoVBTHzhh9EpDpK5ruStLsuUmn53DL2lKsHS9ArfjzaVBYq6CNDkU7PmDBcynssnoTOz0RJ1KQuGPIRrw"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+</div>
+<div class="relative z-10 px-8 md:px-20 max-w-4xl">
+<h1 class="font-headline text-7xl md:text-9xl font-black italic tracking-tiled text-white mb-4 leading-none uppercase">
+            ҚАСҚЫР <br/> TEAM
+        </h1>
+<p class="font-headline text-xl md:text-3xl font-light text-primary tracking-widest uppercase mb-10">
+            Стая не знает слова "сдаться"
+        </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="bg-primary-container text-white px-10 py-5 font-headline font-extrabold uppercase tracking-widest text-sm hover:bg-on-primary-fixed-variant transition-colors">
+                Познакомиться с командой
+            </button>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-3xl">play_circle</span>
+<span class="font-label uppercase text-xs tracking-widest font-bold">Смотреть манифест</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+<span class="font-label text-[10px] uppercase tracking-[0.4em] text-on-surface-variant/50">Scroll to hunt</span>
+<div class="w-[1px] h-16 bg-gradient-to-b from-primary to-transparent"></div>
+</div>
+</section>
+<!-- 2. Team Section -->
+<section class="bg-surface pt-24 min-h-screen" id="team">
+<div class="px-8 py-20 flex flex-col md:flex-row items-end gap-8 border-b border-white/5 bg-surface-container-lowest">
+<div class="flex-1">
+<h1 class="font-headline text-7xl md:text-9xl font-black tracking-tighter uppercase leading-[0.85] mb-4">
+                НАША <span class="text-primary-container">СТАЯ</span>
+</h1>
+<p class="max-w-xl text-on-surface-variant text-lg font-light tracking-tight">
+                Элита триатлона. Хищники на дистанции. Мы не просто соревнуемся, мы доминируем. 
+                Познакомьтесь с теми, кто ведет ҚАСҚЫР TEAM к победе в Шанхае.
+            </p>
+</div>
+<div class="hidden md:block opacity-20">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-white/5">
+<!-- Athlete 1 -->
+<article class="group relative aspect-[3/4] overflow-hidden bg-surface-container-low border-r border-b border-white/5 flex flex-col justify-end">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNtPS0ttnwetXnjuLpvD4s-ub9sJf8kvre3ABdcm9A1YLo2ZtgRPIMTcjKMKcK1OJX60Hricppq-IFHtRfJKVuyDbW3lK151jJ6D4_bV3clwVWp17TN7uoa82dx9qLWNYnCqKQpngUM2Fq8UQ3T68qsUILftQuRWmzf72CkEYWzN-znQH6DLje1BxEV94zYigkaWDWPC3XY8xsp0x9ssgRyaq-d3D_LR3VrYLEaBZce9IAthA_R1v4R85Q8oM8GHglaDhy2M4gMnY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+<div class="relative p-8 z-10 w-full">
+<span class="text-primary font-headline font-bold uppercase text-xs tracking-widest mb-2 block">Captain / Alpha</span>
+<h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-4">Арлан Каскыр</h2>
+<blockquote class="text-on-surface-variant italic font-light border-l-2 border-primary-container pl-4 mb-6 text-sm">"Боль временна, триумф вечен. В этой воде мы — вершина пищевой цепи."</blockquote>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">
+<span>Ironman Readiness</span><span class="text-primary">95%</span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full relative"><div class="absolute top-0 left-0 h-full bg-primary-container w-[95%]"></div></div>
+</div>
+<button class="w-full bg-primary-container text-white py-4 font-headline font-bold uppercase text-xs tracking-[0.2em] flex items-center justify-center gap-3">Следить на Strava <span class="material-symbols-outlined text-sm">trending_up</span></button>
+</div>
+</article>
+<!-- Athlete 2 -->
+<article class="group relative aspect-[3/4] overflow-hidden bg-surface-container-low border-r border-b border-white/5 flex flex-col justify-end">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY1q7mMEq96z2z_XcQ_P8slZ65xD_IkTvTVP5uBnf_ziTCbBARpfppcFcjRMvEIvXiZ-9fi68DQDCw6VsUZcESa2WQXBA8SHf5Zr4bt4AX9xcjLxYgwA8_nU7oPk-Xek4sHEn1NTiZy4QpixnbWL2k7hsLol1PnOvs4gTGtvd1tbMiZcmkoljOxHJS8gjfPYYYcf6GjVEPtnmtWoqsNijzGgOf1xt1sziHKkKDWDYcsf3eCjKPmeC3RU6huGyTsfRV5cFsMcmXsIo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+<div class="relative p-8 z-10 w-full">
+<span class="text-secondary font-headline font-bold uppercase text-xs tracking-widest mb-2 block">Tempo Leader</span>
+<h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-4">Тимур Ветер</h2>
+<blockquote class="text-on-surface-variant italic font-light border-l-2 border-secondary-container pl-4 mb-6 text-sm">"Мой пульс — это ритм охоты. Я не чувствую ветра, я и есть ветер."</blockquote>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">
+<span>Cycling Power</span><span class="text-secondary">88%</span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full relative"><div class="absolute top-0 left-0 h-full bg-secondary-container w-[88%]"></div></div>
+</div>
+<button class="w-full bg-surface-container-highest text-white py-4 font-headline font-bold uppercase text-xs tracking-[0.2em] flex items-center justify-center gap-3 border border-white/10">Следить на Strava <span class="material-symbols-outlined text-sm">trending_up</span></button>
+</div>
+</article>
+<!-- Athlete 3 -->
+<article class="group relative aspect-[3/4] overflow-hidden bg-surface-container-low border-r border-b border-white/5 flex flex-col justify-end">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBvsxU6BLGJxzMwtdszohXnyWVie3GGKjsF4y_Ojg3Z-9clkH94bED2k8HIszzPqX1IHAsBNpuoCAleVIIvCBMB6xTSbRuqDHWLKsTxRy2Z7QQgBSa-aA969PRKfaP_YFp751Q_ioxCJlngwHafcLsVXjS46KN3j-lq6qQgD7K3YT8bjrmKHcGzfnNN3uBLgxMlNQhQLZgunp-1xoiBTJlSWcHIOFWxNvo13HosjUDfXVkXWSYt24awIURZ8OiNwLGffNJJcBMu1k"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+<div class="relative p-8 z-10 w-full">
+<span class="text-primary font-headline font-bold uppercase text-xs tracking-widest mb-2 block">Iron Heart</span>
+<h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-4">Диана Сталь</h2>
+<blockquote class="text-on-surface-variant italic font-light border-l-2 border-primary-container pl-4 mb-6 text-sm">"Когда ноги отказывают, беги сердцем. Границ не существует."</blockquote>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">
+<span>Running Endurance</span><span class="text-primary">92%</span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full relative"><div class="absolute top-0 left-0 h-full bg-primary-container w-[92%]"></div></div>
+</div>
+<button class="w-full bg-primary-container text-white py-4 font-headline font-bold uppercase text-xs tracking-[0.2em] flex items-center justify-center gap-3">Следить на Strava <span class="material-symbols-outlined text-sm">trending_up</span></button>
+</div>
+</article>
+</div>
+</section>
+<!-- 3. Training Stats Section -->
+<section class="pt-24 pb-20 px-8 max-w-7xl mx-auto space-y-12" id="training">
+<header class="relative space-y-4">
+<h1 class="text-5xl md:text-7xl font-black font-headline tracking-tighter uppercase leading-none">Охотничий <span class="text-primary">прогресс</span></h1>
+<p class="text-on-surface-variant max-w-2xl text-lg font-light">Индивидуальные метрики производительности и тренировочный объем.</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+<div class="bg-surface-container-low p-8 flex flex-col justify-between aspect-video">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">pool</span>
+<div><div class="text-6xl font-black font-headline">12.5 <span class="text-2xl text-on-surface-variant">KM</span></div><p class="text-xs uppercase tracking-widest">Swim Weekly</p></div>
+</div>
+<div class="bg-surface-container p-8 flex flex-col justify-between aspect-video">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">directions_bike</span>
+<div><div class="text-6xl font-black font-headline">342 <span class="text-2xl text-on-surface-variant">KM</span></div><p class="text-xs uppercase tracking-widest">Bike Weekly</p></div>
+</div>
+<div class="bg-surface-container-high p-8 flex flex-col justify-between aspect-video border-r-4 border-primary-container">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">directions_run</span>
+<div><div class="text-6xl font-black font-headline">68 <span class="text-2xl text-on-surface-variant">KM</span></div><p class="text-xs uppercase tracking-widest">Run Weekly</p></div>
+</div>
+</div>
+</section>
+<!-- 4. Calendar Section -->
+<section class="pt-24 pb-20 px-8" id="calendar">
+<div class="relative mb-20">
+<h1 class="text-huge font-headline font-black uppercase tracking-tighter text-white/10 select-none">ROAD TO</h1>
+<h2 class="text-6xl md:text-8xl font-headline font-black uppercase tracking-tighter text-primary relative z-10">SHANGHAI 2026</h2>
+<p class="max-w-xl mt-6 text-on-surface-variant border-l-4 border-primary-container pl-6 uppercase tracking-widest text-sm">3.8км плавание | 180км вело | 42.2км бег. Стая готовится к охоте.</p>
+</div>
+<div class="bg-surface-container-low border border-white/5">
+<div class="grid grid-cols-7 border-b border-white/5 bg-surface-container-lowest">
+<div class="p-4 text-center text-xs font-bold uppercase text-on-surface-variant">Mon</div>
+<div class="p-4 text-center text-xs font-bold uppercase text-on-surface-variant">Tue</div>
+<div class="p-4 text-center text-xs font-bold uppercase text-on-surface-variant">Wed</div>
+<div class="p-4 text-center text-xs font-bold uppercase text-on-surface-variant">Thu</div>
+<div class="p-4 text-center text-xs font-bold uppercase text-on-surface-variant">Fri</div>
+<div class="p-4 text-center text-xs font-bold uppercase text-on-surface-variant">Sat</div>
+<div class="p-4 text-center text-xs font-bold uppercase text-on-surface-variant">Sun</div>
+</div>
+<div class="grid grid-cols-7 grid-rows-2">
+<div class="min-h-[140px] p-2 border-r border-b border-white/5 bg-surface-container-lowest/30">
+<span class="text-xs text-white font-bold">01</span>
+<div class="mt-2 p-2 bg-primary-container/20 border-l-2 border-primary-container"><p class="text-[10px] font-bold uppercase text-primary">Core Work</p></div>
+</div>
+<div class="min-h-[140px] p-2 border-r border-b border-white/5 bg-surface-container-lowest/30">
+<span class="text-xs text-white font-bold">02</span>
+<div class="mt-2 p-2 bg-secondary-container/20 border-l-2 border-secondary"><p class="text-[10px] font-bold uppercase text-secondary">Long Run</p></div>
+</div>
+<div class="min-h-[140px] p-2 border-b border-white/5 bg-surface-container-lowest/30">
+<span class="text-xs text-white font-bold">03</span>
+<div class="mt-2 p-2 bg-error-container/40 border-l-2 border-error"><p class="text-[10px] font-bold uppercase text-error">REST DAY</p></div>
+</div>
+<div class="min-h-[140px] p-2 border-r border-b border-white/5"><span class="text-xs text-white font-bold">04</span><div class="mt-2 p-2 bg-primary-container/20 border-l-2 border-primary-container"><p class="text-[10px] font-bold uppercase text-primary">Intervals</p></div></div>
+<div class="min-h-[140px] p-2 border-r border-b border-white/5"><span class="text-xs text-white font-bold">05</span></div>
+<div class="min-h-[140px] p-2 border-r border-b border-white/5"><span class="text-xs text-white font-bold">06</span><div class="mt-2 p-2 bg-primary-container border-l-2 border-white"><p class="text-[10px] font-bold uppercase text-white">Test 5K Run</p></div></div>
+<div class="min-h-[140px] p-2 border-b border-white/5"><span class="text-xs text-white font-bold">07</span></div>
+</div>
+</div>
+</section>
+<!-- 5. Gallery Section -->
+<section class="pt-32 pb-24 px-12 max-w-7xl mx-auto" id="gallery">
+<header class="mb-20">
+<h1 class="text-6xl md:text-8xl font-headline font-black uppercase leading-none tracking-tighter mb-6">ВИЗУАЛЬНЫЙ <br/> <span class="text-primary">КОДЕКС</span></h1>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1 bg-surface-container-lowest p-1">
+<div class="aspect-square bg-surface-container overflow-hidden group">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUokQ0U0IIvYXwmAb_lxsCnnlkeeoa9_bCo8DF2ylQcllXOp0LzaD0j0PTsSoj8U3z1KTbRvZaChjvjhiwm3DByCNoW9kz8qyu16oZVCG3BV_G35NWfaMYLAz55SOc2oG-OG9ugI2SFOSRdWWwm6H-EHr6Xf-L4yL7k_DK6J_sW7lX8guZSWvusd0sPgJWmAV0OdqoP9p1IGgkLQdONY1gMA7hNEhIgLzk9dAGXmMLWPGCCFj0mBvA_81FEbHI6g7OjQ32mk7rx0Y"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden group">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm3CsloIKzmOeXhXr2SLhY6PoLXOw09zXUCodlr1WUZBEi6LAKYpBhohVmz3gcclA4wcixlUy2La0a1ldrPmNNZz3dScrBjsL94n_Ui5wMU-ctx4Lv75Crnta7HI8Y5bKYMTgp9tERItzv5yKRPaiR3zbgoJFEGBhyQnmpXV21NbsNsfe-xnyTB-rFBLam3M3wGHuFLR7JTvWJJ-E07MCpoV1mko22pAxDDOXKBxBrKNm4SXX5cW-9PazXRzY2ceDKBr9rfdBquVw"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden group">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSWPqJduAW_adYSOOIMXUHCapwMTSsvYic95nXcY-7o0NyQs75cApEEZRZb5U7yi3kA85ySJNtSyIryhLVEyPR42YyYbMX8GsQMat55wN-HNFokb6WnREWalkHx5xoArK3N2YPhldvW-eYQV5IPFsBO3cVmtDq5-qlhq8PsC2FtaJmCAL0VH0n3JiT0qQ9f-M-_ce-kyu53-Tmt2E6aTrjm_0BagBaevHbkBveaAo2pRM45HJeCAsMNWURAOS43DOExJfMl8EkTqo"/>
+</div>
+</div>
+</section>
+<!-- 6. Ironman Shanghai 2026 Section -->
+<section class="relative" id="ironman">
+<div class="relative h-[80vh] flex flex-col justify-end px-8 pb-20 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center grayscale opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcFieEv6Z5OEI00voM1JArAFsxo5Yj2RXvp_OJ29XmGIAHekLomhp-sDW2TaX9XUokvyBmGf2r59-eHqkN3E0GYr6Oot9BZXeMzmx923bQTFLItjOK631dwY4ZSnx3z6wxxsKOxk9O-D-SJwPux-ctOEbBdC3UFIx41_twB87CZg9zQneYKOHj6q7FfoOJrQzhqDS6A_fAdBKGNP_YELl4Bu_dUrJVUcWq8bGk_PrE7uYwMNgg14u1qkfyu_-POHpvCTcHHcWWBHc')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+<div class="relative z-10 max-w-7xl">
+<p class="font-headline text-primary uppercase tracking-[0.4em] mb-4 text-sm font-bold">The Ultimate Hunt</p>
+<h1 class="font-headline text-[10vw] leading-[0.85] font-black italic uppercase tracking-tighter mb-8 text-white">SHANGHAI<br/>2026</h1>
+<div class="flex flex-wrap gap-12 border-l-4 border-primary-container pl-8">
+<div><p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Race Date</p><p class="font-headline text-2xl font-bold">OCT 18, 2026</p></div>
+<div><p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Location</p><p class="font-headline text-2xl font-bold">SHANGHAI, CN</p></div>
+</div>
+</div>
+</div>
+<!-- Countdown -->
+<div class="bg-surface-container-lowest py-24 px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+<div class="bg-surface py-12 flex flex-col items-center"><span class="font-headline text-7xl font-black text-white">542</span><span class="text-[10px] uppercase tracking-widest text-primary font-bold mt-2">DAYS</span></div>
+<div class="bg-surface py-12 flex flex-col items-center"><span class="font-headline text-7xl font-black text-white">14</span><span class="text-[10px] uppercase tracking-widest text-primary font-bold mt-2">HOURS</span></div>
+<div class="bg-surface py-12 flex flex-col items-center"><span class="font-headline text-7xl font-black text-white">32</span><span class="text-[10px] uppercase tracking-widest text-primary font-bold mt-2">MINUTES</span></div>
+<div class="bg-surface py-12 flex flex-col items-center"><span class="font-headline text-7xl font-black text-white">08</span><span class="text-[10px] uppercase tracking-widest text-primary font-bold mt-2">SECONDS</span></div>
+</div>
+</div>
+<!-- Territorial Map -->
+<div class="grid grid-cols-1 md:grid-cols-2 min-h-screen">
+<div class="bg-surface-container-low p-12 md:p-24 flex flex-col justify-center">
+<h2 class="font-headline text-5xl font-extrabold uppercase mb-8 leading-none">The Territory</h2>
+<p class="text-on-surface-variant max-w-md mb-12 text-sm leading-relaxed">Shanghai's course is a relentless test of endurance. Yangtze delta swim, pan-flat bike, neon-glow marathon.</p>
+<div class="space-y-6">
+<div><div class="flex justify-between mb-2"><span class="text-xs uppercase font-bold">Swim</span><span class="text-primary font-bold">Yangtze Estuary</span></div><div class="h-1 bg-surface-container-highest w-full"><div class="h-full bg-primary-container w-[65%]"></div></div></div>
+<div><div class="flex justify-between mb-2"><span class="text-xs uppercase font-bold">Bike</span><span class="text-primary font-bold">Coastal Expressway</span></div><div class="h-1 bg-surface-container-highest w-full"><div class="h-full bg-primary-container w-[40%]"></div></div></div>
+<div><div class="flex justify-between mb-2"><span class="text-xs uppercase font-bold">Run</span><span class="text-primary font-bold">Pudong District</span></div><div class="h-1 bg-surface-container-highest w-full"><div class="h-full bg-primary-container w-[85%]"></div></div></div>
+</div>
+</div>
+<div class="bg-[#0E0E0E] flex items-center justify-center p-8 grayscale opacity-50"><span class="material-symbols-outlined text-[300px]">map</span></div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#0E0E0E] py-12 px-8 flex flex-col md:flex-row justify-between items-start w-full border-t border-white/5">
+<div class="mb-8 md:mb-0">
+<div class="text-xl font-black text-white mb-4 font-headline uppercase italic">ҚАСҚЫР TEAM</div>
+<p class="font-['Lexend'] text-xs tracking-widest uppercase text-[#E3BEB8]/60">© 2024 ҚАСҚЫР TEAM. ПРЕДАТОРСКАЯ ЭСТЕТИКА.</p>
+</div>
+<div class="flex flex-wrap gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-headline text-white text-sm font-bold uppercase tracking-widest mb-2">Social</span>
+<a class="text-xs tracking-widest uppercase text-[#E3BEB8]/60 hover:text-white" href="#">Instagram</a>
+<a class="text-xs tracking-widest uppercase text-[#E3BEB8]/60 hover:text-white" href="#">Strava</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-headline text-white text-sm font-bold uppercase tracking-widest mb-2">Info</span>
+<a class="text-xs tracking-widest uppercase text-[#E3BEB8]/60 hover:text-white" href="#">Контакты</a>
+<a class="text-xs tracking-widest uppercase text-[#E3BEB8]/60 hover:text-white" href="#">Политика</a>
+</div>
+</div>
+</footer>
+</body></html>
