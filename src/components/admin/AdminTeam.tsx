@@ -19,6 +19,15 @@ export default function AdminTeam() {
     setSaving(false)
   }
 
+  const disconnectStrava = async (memberId: number) => {
+    if (!confirm("Вы уверены, что хотите отключить Strava для этого спортсмена?")) return;
+    try {
+      await fetchAPI(`/api/strava/disconnect?id=${memberId}`, { method: 'DELETE' })
+      alert('Strava успешно отключена!');
+      reload()
+    } catch(e: any) { alert(e.message) }
+  }
+
   const updateMember = (index: number, key: string, value: any) => {
     const newMembers = [...members]
     newMembers[index] = { ...newMembers[index], [key]: value }
@@ -116,9 +125,14 @@ export default function AdminTeam() {
               </div>
               <div className="col-span-2 flex justify-between items-center mt-2 pt-2 border-t border-white/10">
                 {member.stravaConnected ? (
-                  <span className="text-green-500 font-bold text-[10px] uppercase tracking-widest">
-                    ✅ Strava Подключена
-                  </span>
+                  <div className="flex items-center gap-4">
+                    <span className="text-green-500 font-bold text-[10px] uppercase tracking-widest">
+                      ✅ Strava Подключена
+                    </span>
+                    <button onClick={() => disconnectStrava(member.id)} className="text-on-surface-variant hover:text-white text-[10px] uppercase tracking-widest hover:underline cursor-pointer">
+                      (Отключить)
+                    </button>
+                  </div>
                 ) : (
                   <a href={`/api/strava/auth?id=${member.id}`} className="text-[#fc4c02] font-bold text-[10px] uppercase tracking-widest hover:underline cursor-pointer">
                     🔗 Подключить Strava

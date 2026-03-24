@@ -61,6 +61,26 @@ export default async (req: Request, context: Context) => {
     }
   }
 
+  if (pathname.endsWith("/disconnect") && req.method === "DELETE") {
+    const authHeader = req.headers.get("authorization");
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return new Response("Unauthorized", { status: 401 });
+    }
+
+    const athleteId = url.searchParams.get("id");
+    if (!athleteId) return new Response("Missing athlete id", { status: 400 });
+
+    let tokenMap = await store.get("strava_tokens", { type: "json" }) || {};
+    if (tokenMap[athleteId]) {
+      delete tokenMap[athleteId];
+      await store.setJSON("strava_tokens", tokenMap);
+    }
+
+    return new Response(JSON.stringify({ success: true }), {
+      headers: { "Content-Type": "application/json" }
+    });
+  }
+
   return new Response("Not found", { status: 404 });
 };
 
