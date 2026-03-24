@@ -18,11 +18,6 @@ export default async (req: Request) => {
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
       return new Response("Unauthorized", { status: 401 });
     }
-    const token = authHeader.split(" ")[1];
-    const sessionToken = await store.get("session_token", { type: "text" });
-    if (token !== sessionToken) {
-      return new Response("Unauthorized", { status: 401 });
-    }
 
     try {
       const data = await req.json();
