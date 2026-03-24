@@ -110,6 +110,10 @@ export default function AdminTeam() {
                 <label className="block text-xs mb-1 text-on-surface-variant tracking-widest uppercase">Stat Value (0-100)</label>
                 <input className="w-full bg-surface p-2 border border-white/10 text-sm" type="number" max="100" value={member.stat1_val} onChange={e => updateMember(i, 'stat1_val', e.target.value)} />
               </div>
+              <div className="col-span-2">
+                <label className="block text-xs mb-1 text-on-surface-variant tracking-widest uppercase">Ссылка на профиль Strava (для кнопки)</label>
+                <input className="w-full bg-surface p-2 border border-white/10 text-sm" value={member.strava_url || ''} onChange={e => updateMember(i, 'strava_url', e.target.value)} placeholder="https://www.strava.com/athletes/123456" />
+              </div>
               <div className="col-span-2 flex justify-between items-center mt-2 pt-2 border-t border-white/10">
                 {member.stravaConnected ? (
                   <span className="text-green-500 font-bold text-[10px] uppercase tracking-widest">
