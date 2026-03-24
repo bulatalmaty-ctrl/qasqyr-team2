@@ -43,7 +43,10 @@ export default async (req: Request, context: Context) => {
       ];
       await store.setJSON("team", list);
     }
-    return new Response(JSON.stringify(list), {
+    const tokenMap = await store.get("strava_tokens", { type: "json" }) || {};
+    const enhancedList = list.map((m: any) => ({ ...m, stravaConnected: !!tokenMap[m.id] }));
+
+    return new Response(JSON.stringify(enhancedList), {
       headers: { "Content-Type": "application/json" }
     });
   }

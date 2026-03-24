@@ -110,7 +110,16 @@ export default function AdminTeam() {
                 <label className="block text-xs mb-1 text-on-surface-variant tracking-widest uppercase">Stat Value (0-100)</label>
                 <input className="w-full bg-surface p-2 border border-white/10 text-sm" type="number" max="100" value={member.stat1_val} onChange={e => updateMember(i, 'stat1_val', e.target.value)} />
               </div>
-              <div className="col-span-2 flex justify-end mt-2">
+              <div className="col-span-2 flex justify-between items-center mt-2 pt-2 border-t border-white/10">
+                {member.stravaConnected ? (
+                  <span className="text-green-500 font-bold text-[10px] uppercase tracking-widest">
+                    ✅ Strava Подключена
+                  </span>
+                ) : (
+                  <a href={`/api/strava/auth?id=${member.id}`} className="text-[#fc4c02] font-bold text-[10px] uppercase tracking-widest hover:underline cursor-pointer">
+                    🔗 Подключить Strava
+                  </a>
+                )}
                 <button onClick={() => removeMember(i)} className="text-error hover:underline text-xs tracking-widest uppercase font-bold cursor-pointer">Remove Athlete</button>
               </div>
             </div>

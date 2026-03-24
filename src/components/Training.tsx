@@ -50,8 +50,11 @@ export default function Training({ config }: { config: any }) {
         {logs?.length === 0 && <p className="text-center text-on-surface-variant italic">Журнал тренировок пока пуст.</p>}
         {logs?.map((log) => (
           <div key={log.id} className="bg-[#1C1C1E] rounded-3xl p-6 flex flex-col sm:flex-row items-center sm:items-stretch gap-6 relative group border border-white/5 hover:border-primary-container/30 transition-colors">
-            <div className="absolute top-6 right-6 text-[10px] text-on-surface-variant font-bold uppercase tracking-widest hidden sm:block">
-              {new Date(log.timestamp).toLocaleDateString()}
+            <div className="absolute top-6 right-6 flex items-center gap-3">
+              {log.isStrava && <span className="bg-[#fc4c02] text-white px-2 py-1 rounded text-[8px] font-bold uppercase tracking-widest">Strava</span>}
+              <span className="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest hidden sm:block">
+                {new Date(log.timestamp).toLocaleDateString()}
+              </span>
             </div>
             
             <div className="w-20 h-20 rounded-full bg-[#2A2322] flex items-center justify-center flex-shrink-0">
