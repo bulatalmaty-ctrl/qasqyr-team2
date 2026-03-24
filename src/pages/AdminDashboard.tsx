@@ -4,13 +4,14 @@ import AdminConfig from '../components/admin/AdminConfig'
 import AdminTeam from '../components/admin/AdminTeam'
 import AdminGallery from '../components/admin/AdminGallery'
 import AdminTrainingLog from '../components/admin/AdminTrainingLog'
+import AdminCalendar from '../components/admin/AdminCalendar'
 import { Link } from 'react-router-dom'
 
 export default function AdminDashboard() {
   const [token, setToken] = useState<string | null>(getAuthToken())
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  const [tab, setTab] = useState<'config'|'team'|'gallery'|'training'>('training')
+  const [tab, setTab] = useState<'config'|'team'|'gallery'|'training'|'calendar'>('calendar')
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -68,6 +69,7 @@ export default function AdminDashboard() {
           <button onClick={() => setTab('team')} className={`text-left p-3 uppercase text-sm tracking-widest font-bold cursor-pointer ${tab === 'team' ? 'bg-primary-container text-white' : 'text-on-surface-variant hover:text-white'}`}>Team Panel</button>
           <button onClick={() => setTab('gallery')} className={`text-left p-3 uppercase text-sm tracking-widest font-bold cursor-pointer ${tab === 'gallery' ? 'bg-primary-container text-white' : 'text-on-surface-variant hover:text-white'}`}>Gallery</button>
           <button onClick={() => setTab('training')} className={`text-left p-3 uppercase text-sm tracking-widest font-bold cursor-pointer ${tab === 'training' ? 'bg-primary-container text-white' : 'text-on-surface-variant hover:text-white'}`}>Training Log</button>
+          <button onClick={() => setTab('calendar')} className={`text-left p-3 uppercase text-sm tracking-widest font-bold cursor-pointer ${tab === 'calendar' ? 'bg-primary-container text-white' : 'text-on-surface-variant hover:text-white'}`}>Calendar</button>
         </nav>
         <div className="p-4 border-t border-white/5 space-y-2">
           <Link to="/" className="block w-full text-center p-2 text-xs uppercase tracking-widest bg-surface transition-colors border border-white/10 hover:text-white text-on-surface-variant hover:border-white">View Site</Link>
@@ -79,6 +81,7 @@ export default function AdminDashboard() {
         {tab === 'team' && <AdminTeam />}
         {tab === 'gallery' && <AdminGallery />}
         {tab === 'training' && <AdminTrainingLog />}
+        {tab === 'calendar' && <AdminCalendar />}
       </main>
     </div>
   )
