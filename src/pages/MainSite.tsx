@@ -22,7 +22,7 @@ export default function MainSite() {
       <Calendar />
       <Gallery images={galleryList || []} />
       <Ironman date={config?.ironman_date} />
-      <Footer />
+      <Footer config={config} />
     </>
   )
 }
