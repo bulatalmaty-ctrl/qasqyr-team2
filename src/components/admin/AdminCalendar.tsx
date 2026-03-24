@@ -78,7 +78,7 @@ export default function AdminCalendar() {
               <button onClick={() => removeEvent(i)} className="text-error hover:underline text-xs tracking-widest uppercase font-bold cursor-pointer h-[38px] px-4 flex items-center shrink-0">Remove</button>
             </div>
           </div>
-        ))}
+        )})}
       </div>
       <button onClick={addEvent} className="w-full border-2 border-dashed border-white/20 p-4 text-on-surface-variant hover:text-white hover:border-white transition-colors cursor-pointer font-bold tracking-widest uppercase text-sm">
         + Add Event
