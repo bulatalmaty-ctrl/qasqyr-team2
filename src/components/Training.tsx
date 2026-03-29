@@ -83,7 +83,7 @@ export default function Training({ config }: { config: any }) {
         {logs && logs.length > 0 && (
           <div className="flex justify-center mt-8 p-4">
             <span className="text-on-surface-variant text-xs font-bold uppercase tracking-widest mr-3 flex items-center">Данные синхронизированы через:</span>
-            <img src="https://tech.strava.com/img/api/api_logo_pwrdBy_strava_horiz_light.png" alt="Powered by Strava" className="h-6 opacity-80" />
+            <span className="bg-[#fc4c02] text-white px-2 py-1 rounded text-xs font-bold uppercase tracking-widest">Strava</span>
           </div>
         )}
       </div>
